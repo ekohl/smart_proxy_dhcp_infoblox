@@ -36,7 +36,7 @@ module ::Proxy::DHCP::Infoblox
           @connection,
           'network' => subnet_address,
           'network_view' => network_view,
-          '_max_results' => 2147483646) #2**(32-cidr_to_i(subnet_address)))
+          '_max_results' => 2147483646)
       end
 
       network.filter_map { |h| build_reservation(h.name, h, subnet_address) }
